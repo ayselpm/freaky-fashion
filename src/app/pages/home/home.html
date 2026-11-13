@@ -1,0 +1,87 @@
+<div class="container">
+
+  <!-- Hero -->
+  <section class="hero">
+    <img
+      [src]="hero.imageUrl"
+      [alt]="hero.title"
+      class="hero-image"
+    >
+
+    <div class="hero-text">
+      <h1>{{ hero.title }}</h1>
+      <p>{{ hero.text }}</p>
+    </div>
+  </section>
+
+
+  <!-- Spots -->
+  <section class="spots">
+
+    <a
+      *ngFor="let spot of spots"
+      [routerLink]="spot.link"
+      class="spot"
+    >
+      <img
+        [src]="spot.imageUrl"
+        [alt]="spot.title"
+      >
+
+      <span>{{ spot.title }}</span>
+    </a>
+
+  </section>
+
+
+  <!-- Populära produkter -->
+  <h2 class="section-title">
+    Populära Produkter
+  </h2>
+
+  <section class="products-grid">
+
+    <div
+      class="product-card"
+      *ngFor="let product of products"
+    >
+
+      <div class="product-image-wrapper">
+
+        <a [routerLink]="['/products', product.slug]">
+          <img
+            [src]="product.imageUrl"
+            [alt]="product.title"
+          >
+        </a>
+
+        <button
+          class="heart"
+          type="button"
+          aria-label="Favorit"
+        >
+          ♡
+        </button>
+
+      </div>
+
+      <a
+        [routerLink]="['/products', product.slug]"
+        class="product-name"
+      >
+        {{ product.title }}
+      </a>
+
+      <p class="brand">
+        {{ product.brand }}
+      </p>
+
+      <p class="price">
+        {{ product.price }} kr
+      </p>
+
+    </div>
+
+  </section>
+
+</div>

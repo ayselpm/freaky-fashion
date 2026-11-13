@@ -1,0 +1,71 @@
+<div class="container">
+  <h1>Administration</h1>
+  <h2>Ny produkt</h2>
+
+  <form (ngSubmit)="addProduct()" class="admin-form">
+
+    <div class="form-group">
+      <label>Namn</label>
+      <input
+        type="text"
+        [(ngModel)]="newProduct.title"
+        name="title"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label>Beskrivning</label>
+      <textarea
+        [(ngModel)]="newProduct.description"
+        name="description"
+        required
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>SKU</label>
+      <input
+        type="text"
+        [(ngModel)]="newProduct.sku"
+        name="sku"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label>Bild</label>
+      <input
+        type="text"
+        [(ngModel)]="newProduct.imageUrl"
+        name="imageUrl"
+        placeholder="/images/dress.jpg"
+      >
+    </div>
+
+    <div class="form-group">
+      <label>Pris</label>
+      <input
+        type="number"
+        [(ngModel)]="newProduct.price"
+        name="price"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label>Märke</label>
+      <input
+        type="text"
+        [(ngModel)]="newProduct.brand"
+        name="brand"
+        required
+      >
+    </div>
+
+    <button type="submit" class="btn-submit">
+      Lägg till
+    </button>
+
+  </form>
+</div>

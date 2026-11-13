@@ -1,0 +1,41 @@
+<header class="header">
+
+  <div class="top-row">
+
+    <div class="logo">
+      <a routerLink="/">Freaky Fashion</a>
+    </div>
+
+    <form class="search-form" (ngSubmit)="search()">
+      <input
+        type="text"
+        name="search"
+        [(ngModel)]="searchTerm"
+        placeholder="Sök produkt"
+      >
+
+      <button type="submit">
+        Sök
+      </button>
+    </form>
+
+    <div class="header-icons">
+      <a href="#" (click)="$event.preventDefault()" aria-label="Favoriter">
+        ♡
+      </a>
+
+      <a routerLink="/cart" aria-label="Varukorg">
+        🛒
+      </a>
+    </div>
+
+  </div>
+
+  <nav class="nav-links">
+    <a href="#" (click)="$event.preventDefault()">Nyheter</a>
+    <a href="#" (click)="$event.preventDefault()">Topplistan</a>
+    <a href="#" (click)="$event.preventDefault()">Rea</a>
+    <a href="#" (click)="$event.preventDefault()">Kampanjer</a>
+  </nav>
+
+</header>

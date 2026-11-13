@@ -1,0 +1,50 @@
+<div style="padding: 30px; max-width: 1000px; margin: 0 auto; font-family: Arial, sans-serif;">
+
+  <h1>Administration</h1>
+
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+    <h2>Produkter</h2>
+
+    <a
+      routerLink="/admin/products/new"
+      style="
+        background-color: #222;
+        color: white;
+        padding: 10px 18px;
+        text-decoration: none;
+        border-radius: 4px;
+      ">
+      Ny produkt
+    </a>
+  </div>
+
+  <table style="width: 100%; border-collapse: collapse;">
+    <thead>
+      <tr style="border-bottom: 2px solid #333;">
+        <th style="text-align: left; padding: 12px;">Namn</th>
+        <th style="text-align: left; padding: 12px;">SKU</th>
+        <th style="text-align: left; padding: 12px;">Pris</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr
+        *ngFor="let product of products"
+        style="border-bottom: 1px solid #ccc;"
+      >
+        <td style="padding: 12px;">
+          {{ product.title }}
+        </td>
+
+        <td style="padding: 12px;">
+          {{ product.sku }}
+        </td>
+
+        <td style="padding: 12px;">
+          {{ product.price }} kr
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

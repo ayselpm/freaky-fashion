@@ -1,0 +1,17 @@
+<div class="container">
+  <h2>Din varukorg</h2>
+  
+  <div *ngIf="cartItems.length === 0" class="empty-cart">
+    <p>Din varukorg är tom.</p>
+    <a routerLink="/" class="btn">Börja handla</a>
+  </div>
+
+  <div *ngIf="cartItems.length > 0">
+    <div class="cart-item" *ngFor="let item of cartItems">
+      <h4>{{ item.title }}</h4>
+      <p>{{ item.price }} kr</p>
+    </div>
+    <hr>
+    <a routerLink="/checkout" class="btn-checkout">Till kassan</a>
+  </div>
+</div>
